@@ -38,7 +38,10 @@ const questions = require('inquirer');
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() => {
+    promptUser()
+    .then((answers) => writeFileAsync('README.md',generateMD(answers)))
+};
 
 // Function call to initialize app
 init();
