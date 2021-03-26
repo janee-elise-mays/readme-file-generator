@@ -5,11 +5,11 @@ const inquirer = require('inquirer');
 const questions =
     inquirer.prompt([
         { type: "input", message: "What is the title of the project?", name: "title", },
-        { type: "input", message: "What is the app for?", name: "purpose", },
-        { type: "input", message: "How to use the app?", name: "use", },
+        { type: "input", message: "Briefly describe the project.", name: "description", },
         { type: "input", message: "How to install the app?", name: "install", },
-        { type: "input", message: "How to report issues?", name: "issues", },
+        { type: "input", message: "How to use the app?", name: "use", },
         { type: "input", message: "How to make contributions?", name: "contribute",}
+        { type: "input", message: "How to report issues?", name: "issues", },
     ])
         .then(answers => {
             const readme = createREADME(answers);
@@ -24,6 +24,16 @@ function writeToFile({ answers }) {
     return
     < !DOCTYPE md >
 
+    <h1># ${answers.title}</h1>
+    <h1># Description</h1>
+    <p> ${answers.purpose}</p>
+    <h1># Table of Contents</h1>
+    <p>App Use</p>
+    <p>Installation</p>
+    <p>Issues</p>
+    <p>Contributions</p>
+
+
 }
 
 // TODO: Create a function to initialize app
@@ -33,4 +43,4 @@ function writeToFile({ answers }) {
 // };
 
 // Function call to initialize app
-// init();
+init();
