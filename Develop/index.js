@@ -8,8 +8,10 @@ const questions =
         { type: "input", message: "Briefly describe the project.", name: "description", },
         { type: "input", message: "How to install the app?", name: "install", },
         { type: "input", message: "How to use the app?", name: "use", },
-        { type: "input", message: "How to make contributions?", name: "contribute",}
+        { type: "input", message: "How to make contributions?", name: "contribute",},
         { type: "input", message: "How to report issues?", name: "issues", },
+        { type: "input", message: "What is your github username?", name: "username", },
+        { type: "input", message: "What is your email?", name: "email", },
     ])
         .then(answers => {
             const readme = createREADME(answers);
@@ -25,13 +27,25 @@ function writeToFile({ answers }) {
     < !DOCTYPE md >
 
     <h1># ${answers.title}</h1>
-    <h1># Description</h1>
-    <p> ${answers.purpose}</p>
     <h1># Table of Contents</h1>
-    <p>App Use</p>
+    <p>Description</p>
     <p>Installation</p>
-    <p>Issues</p>
+    <p>Usage</p>
     <p>Contributions</p>
+    <p>Tests</p>
+    <p>Questions</p>
+    <h1># Description</h1>
+    <p> ${answers.description}</p>
+    <h1># Installation</h1>
+    <p> ${answers.install}</p>
+    <h1># Usage</h1>
+    <p> ${answers.use}</p>
+    <h1># Contribution</h1>
+    <p> ${answers.contribute}</p>
+    <h1># Tests</h1>
+    <h1># Questions</h1>
+    <p> ${answers.purpose}</p>
+    
 
 
 }
