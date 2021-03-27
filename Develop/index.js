@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs')
 const inquirer = require('inquirer');
+const util = require('util');
 // TODO: Create an array of questions for user input
 const questions =
     inquirer.prompt([
@@ -51,59 +52,14 @@ const questions =
         },
     ])
     .then(answers => {
-        JSON.stringify(answers);
+        const readme = util.generateMarkdown(answers);
+        writeToFile(readme)
     })
-
-function writeToFile(answers) {
-if (answers.license == "Mozilla Public License 2.0"){
-    answers.license = "![NPM](https://img.shields.io/npm/l/mozilla?label=Mozilla%20Public%20License%202.0)"
-}else if(answers.license == "Apache License 2.0"){
-    answers.license = "[![NPM](https://img.shields.io/npm/l/apache?color=blue&label=apache%202.0))]"
-}else(answers.license === "MIT License")
-    answers.license = "![NPM](https://img.shields.io/npm/l/mit?color=blue&label=MIT%20License%202.0)"
-
-    return '# ${answers.title}
-
-
-    ## Description
-    ${answers.description}
-
-
-    ## Table of Contents:
-    [Installation](#installation)
-    [Usage](#usage)
-    [Contributions](#contributions)
-    [Tests](#tests)
-    [Questions](#questions)
-
-   
-    ## Installation
-    ${answers.install}
-
-
-    ## Usage
-    ${answers.use}
-
-
-    ## Contributions
-    ${answers.contribute}
-
-
-    ## Tests
-    ${answers.issues}
-
-
-    ## Questions
-    'If you have additional questions about this application, please contact me below using the methods below.'
-    ${answers.username}
-    ${answers.email}
-
-'
-}
-.then(answers => {
-    const readme = createREADME(answers);
-    fs.writeFileSync('./readme.md', readme, (error) => { if (error) console.log("Opps, try again") });
-});
+    
+    function writeToFile(content) {
+        fs.writeFileSync('./readme.md', content, (error) => { if (error) console.log("Opps, try again") });
+    }   
+    
 
 
 // Function call to initialize app
