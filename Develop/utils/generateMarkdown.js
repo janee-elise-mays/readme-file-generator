@@ -2,11 +2,11 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license == "Mozilla Public License 2.0"){
-      return "![NPM](https://img.shields.io/npm/l/mozilla?label=Mozilla%20Public%20License%202.0)"
+      return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)]"
   }else if(license == "Apache License 2.0"){
-      return "[![NPM](https://img.shields.io/npm/l/apache?color=blue&label=apache%202.0))]"
+      return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)]"
   }else(license === "MIT License")
-      return "![NPM](https://img.shields.io/npm/l/mit?color=blue&label=MIT%20License%202.0)"
+      return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)]"
 }
 
 // TODO: Create a function that returns the license link
@@ -25,7 +25,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license == "Mozilla Public License 2.0"){
     return "Mozilla Public License 2.0"
-}else if(license == "Apache License 2.0"){
+}else if(license == "Apache License 2.0 "){
     return "Apache License 2.0"
 }else(license === "MIT License")
     return "MIT License"
@@ -37,6 +37,7 @@ function generateMarkdown(answers) {
 # ${answers.title}
 
 ## License
+This project is licensed under
 ${answers.license}
 
 
@@ -45,11 +46,11 @@ ${answers.description}
 
 
 ## Table of Contents:
-[Installation](#installation)
-[Usage](#usage)
-[Contributions](#contributions)
-[Tests](#tests)
-[Questions](#questions)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributions](#contributions)
+- [Tests](#tests)
+- [Questions](#questions)
 
 
 ## Installation
@@ -69,7 +70,7 @@ ${answers.issues}
 
 
 ## Questions
-'If you have additional questions about this application, please contact me below using the methods below.'
+If you have additional questions about this application, please contact me using the methods below.
 ${answers.username}
 ${answers.email}
 

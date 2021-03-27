@@ -2,6 +2,7 @@
 # 1
 
 ## License
+This project is licensed under
 Apache License 2.0
 
 
@@ -10,11 +11,11 @@ Apache License 2.0
 
 
 ## Table of Contents:
-[Installation](#installation)
-[Usage](#usage)
-[Contributions](#contributions)
-[Tests](#tests)
-[Questions](#questions)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributions](#contributions)
+- [Tests](#tests)
+- [Questions](#questions)
 
 
 ## Installation
@@ -34,7 +35,7 @@ Apache License 2.0
 
 
 ## Questions
-'If you have additional questions about this application, please contact me below using the methods below.'
+If you have additional questions about this application, please contact me using the methods below.
 7
 8
 
