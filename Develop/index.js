@@ -53,61 +53,58 @@ const questions =
     .then(answers => {
         JSON.stringify(answers);
     })
-        
-// JSON.stringify(answers);
-// console.log(answers);
 
-// TODO: Create a function to write README file
-// function writeToFile({ answers }) {
-//     // fileName, data
-//     return '# ${answers.title}
+function writeToFile(answers) {
+if (answers.license == "Mozilla Public License 2.0"){
+    answers.license = "![NPM](https://img.shields.io/npm/l/mozilla?label=Mozilla%20Public%20License%202.0)"
+}else if(answers.license == "Apache License 2.0"){
+    answers.license = "[![NPM](https://img.shields.io/npm/l/apache?color=blue&label=apache%202.0))]"
+}else(answers.license === "MIT License")
+    answers.license = "![NPM](https://img.shields.io/npm/l/mit?color=blue&label=MIT%20License%202.0)"
 
-
-//     ## Description'
-//     ${answers.description}
+    return '# ${answers.title}
 
 
-//     ## Table of Contents:
-//     [Installation](#installation)
-//     [Usage](#usage)
-//     [Contributions](#contributions)
-//     [Tests](#tests)
-//     [Questions](#questions)
+    ## Description
+    ${answers.description}
+
+
+    ## Table of Contents:
+    [Installation](#installation)
+    [Usage](#usage)
+    [Contributions](#contributions)
+    [Tests](#tests)
+    [Questions](#questions)
 
    
-//     ## Installation
-//     ${answers.install}
+    ## Installation
+    ${answers.install}
 
 
-//     ## Usage
-//     ${answers.use}
+    ## Usage
+    ${answers.use}
 
 
-//     ## Contributions
-//     ${answers.contribute}
+    ## Contributions
+    ${answers.contribute}
 
 
-//     ## Tests
-//     ${answers.issues}
+    ## Tests
+    ${answers.issues}
 
 
-//     ## Questions
-//     'If you have additional questions about this application, please contact me below using the methods below.'
-//     ${answers.username}
-//     ${answers.email}
+    ## Questions
+    'If you have additional questions about this application, please contact me below using the methods below.'
+    ${answers.username}
+    ${answers.email}
 
-// '
-// }
-// .then(answers => {
-//     const readme = createREADME(answers);
-//     fs.writeFileSync('./readme.md', readme, (error) => { if (error) console.log("Opps, try again") });
-// });
+'
+}
+.then(answers => {
+    const readme = createREADME(answers);
+    fs.writeFileSync('./readme.md', readme, (error) => { if (error) console.log("Opps, try again") });
+});
 
-// TODO: Create a function to initialize app
-// function init() => {
-//     promptUser()
-//     .then((answers) => writeFileAsync('README.md',generateMD(answers)))
-// };
 
 // Function call to initialize app
 // init();
