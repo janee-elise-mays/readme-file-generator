@@ -1,5 +1,5 @@
 
-# 1
+# Readme generator
 
 ## License
 This project is licensed under
@@ -9,7 +9,7 @@ MIT License
 
 
 ## Description
-2
+To generate a README file
 
 
 ## Table of Contents:
@@ -21,24 +21,24 @@ MIT License
 
 
 ## Installation
-3
+node.js
 
 
 ## Usage
-4
+open terminal and answer prompts
 
 
 ## Contributions
-5
+follow user contact
 
 
 ## Tests
-6
+report
 
 
 ## Questions
 If you have additional questions about this application, please contact me using the methods below.
-7
-8
+janee-mays
+janee.elise@gmail.com
 
 Mozilla Public License 2.0
