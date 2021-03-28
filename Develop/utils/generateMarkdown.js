@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license == "Mozilla Public License 2.0"){
-      return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)]"
+      return "[![License](https://img.shields.io/npm/l/mozilla?label=Mozilla%20Public%20License%202.0)]"
   }else if(license == "Apache License 2.0"){
       return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)]"
   }else(license === "MIT License")
@@ -38,7 +38,9 @@ function generateMarkdown(answers) {
 
 ## License
 This project is licensed under
-${answers.license}
+${renderLicenseBadge()}
+${renderLicenseLink()}
+${renderLicenseSection()}
 
 
 ## Description
@@ -74,7 +76,8 @@ If you have additional questions about this application, please contact me using
 ${answers.username}
 ${answers.email}
 
+${answers.license}
 `
 }
 
-module.exports = generateMarkdown,renderLicenseBadge,renderLicenseLink, renderLicenseSection;
+module.exports = generateMarkdown;

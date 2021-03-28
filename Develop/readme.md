@@ -3,7 +3,9 @@
 
 ## License
 This project is licensed under
-Apache License 2.0
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)]
+https://opensource.org/licenses/MIT
+MIT License
 
 
 ## Description
@@ -39,3 +41,4 @@ If you have additional questions about this application, please contact me using
 7
 8
 
+Mozilla Public License 2.0
